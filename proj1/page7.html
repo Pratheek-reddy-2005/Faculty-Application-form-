@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Application Form - Page 7</title>
+    <style>
+        /* CSS styles */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .form-section {
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .form-section label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .form-section textarea,
+        .form-section input[type="file"] {
+            width: calc(100% - 20px);
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-top: 5px;
+        }
+
+        .back-btn,
+        .save-next-btn,
+        .go-back-btn,
+        .view-file-btn {
+            display: inline-block;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            margin-top: 10px;
+            color: #fff;
+        }
+
+        .back-btn {
+            background-color: #007bff;
+        }
+
+        .save-next-btn {
+            background-color: #007bff;
+        }
+
+        .save-next-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .go-back-btn {
+            background-color: #007bff;
+        }
+
+        .go-back-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .view-file-btn {
+            background-color: #28a745;
+        }
+
+        .view-file-btn:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="logout">
+        <a href="logout.php">Logout</a>
+    </div>
+    <h1>Welcome <?php echo $user_data['user_name']; ?></h1>
+
+    <h2>Indian Institute of Technology Patna</h2>
+    <form action="page7.php" method="post">
+        <div class="form-section clearfix">
+            <fieldset>
+                <legend>Reprints of 5 Best Research Papers *</legend>
+                <input type="file" name="research_papers" accept=".pdf">
+                <button type="button" class="view-file-btn">View Uploaded File</button>
+            </fieldset>
+        </div>
+
+        <div class="form-section clearfix">
+            <fieldset>
+                <legend>Check List of the documents attached with the online application *</legend>
+                <input type="file" name="phd_certificate" accept=".pdf"> PHD Certificate <button type="button" class="view-file-btn">View Uploaded File</button><br>
+                <input type="file" name="pg_documents" accept=".pdf"> PG Documents <button type="button" class="view-file-btn">View Uploaded File</button><br>
+                <input type="file" name="ug_documents" accept=".pdf"> UG Documents <button type="button" class="view-file-btn">View Uploaded File</button><br>
+                <input type="file" name="12th_documents" accept=".pdf"> 12th/HSC/Diploma Documents <button type="button" class="view-file-btn">View Uploaded File</button><br>
+                <input type="file" name="10th_documents" accept=".pdf"> 10th/SSC Documents <button type="button" class="view-file-btn">View Uploaded File</button><br>
+                <input type="file" name="pay_slip" accept=".pdf"> Pay Slip <button type="button" class="view-file-btn">View Uploaded File</button><br>
+                <input type="file" name="noc_undertaking" accept=".pdf"> NOC or Undertaking <button type="button" class="view-file-btn">View Uploaded File</button><br>
+                <input type="file" name="experience_certificate" accept=".pdf"> Last Pay slip <button type="button" class="view-file-btn">View Uploaded File</button><br>
+                <input type="file" name="other_documents" accept=".pdf"> Upload any other relevant document <button type="button" class="view-file-btn">View Uploaded File</button><br>
+            </fieldset>
+        </div>
+
+        <div class="form-section clearfix">
+            <fieldset>
+                <legend>&nbsp;</legend>
+                <input type="submit" class="save-next-btn" value="Save and Next">
+                <p> </p>
+                <input type="button" class="go-back-btn" value="Go Back" onclick="window.location.href='page6.html'">
+            </fieldset>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Application Form - Page 1</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2 {
+            text-align: center;
+        }
+
+        .form-section {
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        .form-section:last-child {
+            margin-bottom: 0;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        input[type="email"],
+        textarea,
+        select {
+            width: calc(100% - 22px);
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="file"] {
+            margin-top: 5px;
+        }
+
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        .save-next-btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .save-next-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Application Form - Page 1</h1>
+    <form action="page1.php" method="post">
+        <input type="hidden" name="page_number" value="1">
+        <div class="form-section">
+            <fieldset>
+                <legend>Application Details:</legend>
+                <label for="post_applied">Post Applied For:</label>
+                <select id="post_applied" name="post_applied">
+                    <option value="prof">Professor</option>
+                    <option value="assi_prof">Assistant Professor</option>
+                    <option value="assi_prof_grade1">Assistant Professor Grade 1</option>
+                    <option value="assi_prof_grade2">Assistant Professor Grade 2</option>
+                </select>
+
+                <label for="department">Department:</label>
+                <select id="department" name="department">
+                    <option value="cse">Computer Science and Engineering</option>
+                    <option value="ee">Electrical Engineering</option>
+                    <option value="ece">Electronics and Communication Engineering</option>
+                    <option value="civil">Civil Engineering</option>
+                    <option value="mech">Mechanical Engineering</option>
+                    <option value="chemical">Chemical Engineering</option>
+                </select>
+            </fieldset>
+        </div>
+
+        <div class="form-section">
+            <fieldset>
+                <legend>Personal Details:</legend>
+                <div style="width: 50%; float: left;">
+                    <label for="first_name">First Name:</label>
+                    <input type="text" id="first_name" name="first_name">
+
+                    <label for="middle_name">Middle Name:</label>
+                    <input type="text" id="middle_name" name="middle_name">
+
+                    <label for="last_name">Last Name:</label>
+                    <input type="text" id="last_name" name="last_name">
+
+                    <label for="nationality">Nationality:</label>
+                    <input type="text" id="nationality" name="nationality">
+
+                    <label for="dob">Date of Birth:</label>
+                    <input type="date" id="dob" name="dob">
+                </div>
+                <div style="width: 50%; float: right;">
+                    <label for="gender">Gender:</label>
+                    <select id="gender" name="gender">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+
+                    <label for="marital_status">Marital Status:</label>
+                    <select id="marital_status" name="marital_status">
+                        <option value="single">Single</option>
+                        <option value="married">Married</option>
+                        <option value="divorced">Divorced</option>
+                        <option value="widowed">Widowed</option>
+                    </select>
+
+                    <label for="id_proof">ID Proof:</label>
+                    <input type="file" id="id_proof" name="id_proof">
+                </div>
+            </fieldset>
+        </div>
+
+        <div class="form-section">
+            <fieldset>
+                <legend>Additional Personal Details:</legend>
+                <label for="father_name">Father's Name:</label>
+                <input type="text" id="father_name" name="father_name">
+
+                <label for="current_address">Current Address:</label>
+                <textarea id="current_address" name="current_address" rows="4" cols="25"></textarea>
+
+                <label for="permanent_address">Permanent Address:</label>
+                <textarea id="permanent_address" name="permanent_address" rows="4" cols="25"></textarea>
+            </fieldset>
+        </div>
+
+        <div class="form-section">
+            <fieldset>
+                <legend>Contact Details:</legend>
+                <label for="mobile">Mobile:</label>
+                <input type="text" id="mobile" name="mobile">
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email">
+
+                <label for="landline">Landline:</label>
+                <input type="text" id="landline" name="landline">
+            </fieldset>
+        </div>
+
+        <div class="form-section clearfix">
+            <input type="submit" class="save-next-btn" value="Save and Next">
+        </div>
+
+    </form>
+</div>
+
+</body>
+</html>

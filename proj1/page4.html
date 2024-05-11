@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Application Form - Page 4</title>
+    <style>
+        /* CSS styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .form-section {
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .form-section label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .form-section input[type="text"],
+        .form-section textarea {
+            width: calc(100% - 20px);
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .form-section textarea {
+            height: 100px;
+        }
+
+        .logout {
+            text-align: right;
+        }
+
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        .back-btn,
+        .save-next-btn,
+        .go-back-btn,
+        .add-more-btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            margin-top: 10px;
+        }
+
+        .back-btn,
+        .save-next-btn {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+        }
+
+        .save-next-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .add-more-btn {
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+        }
+
+        .add-more-btn:hover {
+            background-color: #218838;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 10px;
+        }
+
+        th, td {
+            padding: 8px;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="logout">
+        <a href="logout.php">Logout</a>
+    </div>
+    <h1>Welcome <?php echo $user_data['user_name']; ?></h1>
+
+    <h2>Indian Institute of Technology Patna</h2>
+    <form action="page4.php" method="post">
+        
+        <div class="form-section clearfix">
+            <fieldset>
+                <legend>Areas of Specialization:</legend>
+                <textarea name="areas_of_specialization" placeholder="Enter areas of specialization"></textarea>
+            </fieldset>
+        </div>
+
+        <div class="form-section clearfix">
+            <fieldset>
+                <legend>Current Areas of Research:</legend>
+                <textarea name="current_areas_of_research" placeholder="Enter current areas of research"></textarea>
+            </fieldset>
+        </div>
+
+        <div class="form-section clearfix">
+            <fieldset>
+                <legend>Summary of Publications:</legend>
+                <table id="publications_table">
+                    <tr>
+                        <th>Title</th>
+                        <th>Type</th>
+                        <th>Year</th>
+                        <th>Action</th>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="publication_title[]"></td>
+                        <td>
+                            <select name="publication_type[]">
+                                <option value="Patent">Patent</option>
+                                <option value="Book">Book</option>
+                                <option value="Journal">Journal</option>
+                                <option value="Book Chapter">Book Chapter</option>
+                            </select>
+                        </td>
+                        <td><input type="text" name="publication_year[]"></td>
+                        <td><button type="button" class="add-more-btn" onclick="addRow('publications_table')">Add More</button></td>
+                    </tr>
+                </table>
+            </fieldset>
+        </div>
+
+        <div class="form-section clearfix">
+            <fieldset>
+                <legend>Google Scholar Link:</legend>
+                <input type="text" name="google_scholar_link" placeholder="Enter Google Scholar Link">
+            </fieldset>
+        </div>
+
+        <div class="form-section clearfix">
+            <fieldset>
+                <legend>&nbsp;</legend>
+                <input type="submit" class="save-next-btn" value="Save and Next">
+                <p> </p>
+                <input type="button" class="go-back-btn" value="Go Back" onclick="window.location.href='page3.html'">
+            </fieldset>
+        </div>
+    </form>
+</div>
+
+<script>
+    function addRow(tableId) {
+        var table = document.getElementById(tableId);
+        var newRow = table.insertRow(-1); // Insert row at the end
+        var numCols = table.rows[0].cells.length - 1; // Excluding action column
+        for (var i = 0; i < numCols; i++) {
+            var cell = newRow.insertCell(i); // Insert cell for each column
+            var input = document.createElement("input");
+            if (i === 1) {
+                input = document.createElement("select");
+                var option1 = document.createElement("option");
+                option1.value = "Patent";
+                option1.text = "Patent";
+                var option2 = document.createElement("option");
+                option2.value = "Book";
+                option2.text = "Book";
+                var option3 = document.createElement("option");
+                option3.value = "Journal";
+                option3.text = "Journal";
+                var option4 = document.createElement("option");
+                option4.value = "Book Chapter";
+                option4.text = "Book Chapter";
+                input.appendChild(option1);
+                input.appendChild(option2);
+                input.appendChild(option3);
+                input.appendChild(option4);
+            } else {
+                input.type = "text";
+            }
+            input.name = tableId + "[]";
+            cell.appendChild(input);
+        }
+        var actionCell = newRow.insertCell(numCols); // Insert cell for action
+        var removeButton = document.createElement("button");
+        removeButton.type = "button";
+        removeButton.textContent = "Remove";
+        removeButton.onclick = function() {
+            removeRow(tableId, this);
+        };
+        actionCell.appendChild(removeButton);
+    }
+
+    function removeRow(tableId, button) {
+        var row = button.parentNode.parentNode;
+        row.parentNode.removeChild(row);
+    }
+</script>
+
+</body>
+</html>

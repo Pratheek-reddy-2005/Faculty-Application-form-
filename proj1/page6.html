@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Application Form - Page 6</title>
+    <style>
+        /* CSS styles */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .form-section {
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .form-section label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .form-section textarea {
+            width: calc(100% - 20px);
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            height: 100px;
+        }
+
+        .back-btn,
+        .save-next-btn,
+        .go-back-btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            margin-top: 10px;
+        }
+
+        .back-btn {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+        }
+
+        .save-next-btn {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+        }
+
+        .save-next-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .go-back-btn {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+        }
+
+        .go-back-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="logout">
+        <a href="logout.php">Logout</a>
+    </div>
+    <h1>Welcome <?php echo $user_data['user_name']; ?></h1>
+
+    <h2>Indian Institute of Technology Patna</h2>
+    <form action="page6.php" method="post">
+        <div class="form-section clearfix">
+            <fieldset>
+                <legend>Significant research contribution and future plans:</legend>
+                <textarea name="research_contribution" placeholder="Enter significant research contribution and future plans (not more than 500 words)"></textarea>
+            </fieldset>
+        </div>
+
+        <div class="form-section clearfix">
+            <fieldset>
+                <legend>Research Statement and Projects:</legend>
+                <textarea name="research_statement" placeholder="Enter research statement and specific research projects to be conducted at IIT Patna in a 2-3 year timeframe"></textarea>
+            </fieldset>
+        </div>
+
+        <div class="form-section clearfix">
+            <fieldset>
+                <legend>Significant teaching contribution and future plans:</legend>
+                <textarea name="teaching_contribution" placeholder="Enter significant teaching contribution and future plans, including UG/PG courses you would like to develop and/or teach at IIT Patna (not more than 500 words)"></textarea>
+            </fieldset>
+        </div>
+
+        <div class="form-section clearfix">
+            <fieldset>
+                <legend>Any other relevant information:</legend>
+                <textarea name="other_information" placeholder="Enter any other relevant information (not more than 500 words)"></textarea>
+            </fieldset>
+        </div>
+
+        <div class="form-section">
+            <fieldset>
+                <legend>Professional Service:</legend>
+                <textarea name="professional_service" placeholder="Enter professional service details (S.No, Service, Organization/Body, Year)"></textarea>
+            </fieldset>
+        </div>
+
+        <div class="form-section">
+            <fieldset>
+                <legend>Journal Publications:</legend>
+                <textarea name="journal_publications" placeholder="Enter journal publication details (S.No, Title, Journal Name, Year)"></textarea>
+            </fieldset>
+        </div>
+
+        <div class="form-section">
+            <fieldset>
+                <legend>Conference Publications:</legend>
+                <textarea name="conference_publications" placeholder="Enter conference publication details (S.No, Title, Conference Name, Year)"></textarea>
+            </fieldset>
+        </div>
+
+        <div class="form-section clearfix">
+            <fieldset>
+                <legend>&nbsp;</legend>
+                <input type="submit" class="save-next-btn" value="Save and Next">
+                <p> </p>
+                <input type="button" class="go-back-btn" value="Go Back" onclick="window.location.href='page5.html '">
+            </fieldset>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>

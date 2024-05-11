@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Application Form - Page 8</title>
+    <style>
+        /* Your CSS styles */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .form-section {
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .form-section label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .form-section input[type="text"],
+        .form-section textarea {
+            width: calc(100% - 20px);
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .form-section textarea {
+            height: 100px;
+        }
+
+        .save-btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .save-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .back-btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #dc3545;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+
+        .back-btn:hover {
+            background-color: #c82333;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            padding: 8px;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .tick-checkbox {
+            margin-bottom: 10px;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Referees</h1>
+    <form action="page8.php" method="post">
+        <div class="form-section clearfix">
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Position</th>
+                    <th>Association with Referee</th>
+                    <th>Institution/Organization</th>
+                    <th>E-mail</th>
+                    <th>Contact No.</th>
+                </tr>
+                <tr>
+                    <td><input type="text" name="referee_name_1" placeholder="Referee Name"></td>
+                    <td><input type="text" name="referee_position_1" placeholder="Position"></td>
+                    <td><input type="text" name="referee_association_1" placeholder="Association with Referee"></td>
+                    <td><input type="text" name="referee_institution_1" placeholder="Institution/Organization"></td>
+                    <td><input type="text" name="referee_email_1" placeholder="E-mail"></td>
+                    <td><input type="text" name="referee_contact_1" placeholder="Contact No."></td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="referee_name_2" placeholder="Referee Name"></td>
+                    <td><input type="text" name="referee_position_2" placeholder="Position"></td>
+                    <td><input type="text" name="referee_association_2" placeholder="Association with Referee"></td>
+                    <td><input type="text" name="referee_institution_2" placeholder="Institution/Organization"></td>
+                    <td><input type="text" name="referee_email_2" placeholder="E-mail"></td>
+                    <td><input type="text" name="referee_contact_2" placeholder="Contact No."></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="form-section clearfix">
+            <fieldset>
+                <legend>Final Declaration</legend>
+                <label class="tick-checkbox">
+                    <input type="checkbox" name="declaration_checkbox" required> I hereby declare that I have carefully read and understood the instructions and particulars mentioned in the advertisement and this application form. I further declare that all the entries along with the attachments uploaded in this form are true to the best of my knowledge and belief.
+                </label>
+            </fieldset>
+        </div>
+
+        <div class="form-section clearfix">
+            <input type="button" class="back-btn" value="Back" onclick="window.location.href='page7.html'">
+            <input type="submit" class="save-btn" value="Save and Submit">
+        </div>
+    </form>
+</div>
+
+</body>
+</html>

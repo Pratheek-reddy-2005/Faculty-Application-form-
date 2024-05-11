@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Application Form - Page 5</title>
+    <style>
+        /* CSS styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .form-section {
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .form-section label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .form-section input[type="text"],
+        .form-section textarea {
+            width: calc(100% - 20px);
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .form-section textarea {
+            height: 100px;
+        }
+
+        .logout {
+            text-align: right;
+        }
+
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        .back-btn,
+        .save-next-btn,
+        .add-more-btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            margin-top: 10px;
+        }
+
+        .back-btn {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+        }
+
+        .save-next-btn {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+        }
+
+        .save-next-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .add-more-btn {
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+        }
+
+        .add-more-btn:hover {
+            background-color: #218838;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 10px;
+        }
+
+        th, td {
+            padding: 8px;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="logout">
+        <a href="logout.php">Logout</a>
+    </div>
+    <h1>Welcome <?php echo $user_data['user_name']; ?></h1>
+
+    <h2>Indian Institute of Technology Patna</h2>
+    <form action="page5.php" method="post">
+
+        <div class="form-section clearfix">
+            <fieldset>
+                <legend>Memberships:</legend>
+                <table id="memberships_table">
+                    <tr>
+                        <th>Organization</th>
+                        <th>Membership Type</th>
+                        <th>Action</th>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="membership_organization[]"></td>
+                        <td><input type="text" name="membership_type[]"></td>
+                        <td><button type="button" class="add-more-btn" onclick="addRow('memberships_table')">Add More</button></td>
+                    </tr>
+                </table>
+            </fieldset>
+        </div>
+
+        <div class="form-section clearfix">
+            <fieldset>
+                <legend>Awards and Recognition:</legend>
+                <table id="awards_table">
+                    <tr>
+                        <th>Award</th>
+                        <th>Year</th>
+                        <th>Action</th>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="award_name[]"></td>
+                        <td><input type="text" name="award_year[]"></td>
+                        <td><button type="button" class="add-more-btn" onclick="addRow('awards_table')">Add More</button></td>
+                    </tr>
+                </table>
+            </fieldset>
+        </div>
+
+        <div class="form-section clearfix">
+            <fieldset>
+                <legend>Professional Training:</legend>
+                <table id="training_table">
+                    <tr>
+                        <th>Training Title</th>
+                        <th>Organization</th>
+                        <th>Year</th>
+                        <th>Action</th>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="training_title[]"></td>
+                        <td><input type="text" name="training_organization[]"></td>
+                        <td><input type="text" name="training_year[]"></td>
+                        <td><button type="button" class="add-more-btn" onclick="addRow('training_table')">Add More</button></td>
+                    </tr>
+                </table>
+            </fieldset>
+        </div>
+
+        <div class="form-section clearfix">
+            <fieldset>
+                <legend>Projects:</legend>
+                <table id="projects_table">
+                    <tr>
+                        <th>Organization</th>
+                        <th>Title of the Project</th>
+                        <th>Amount</th>
+                        <th>Period</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="organisation[]"></td>
+                        <td><input type="text" name="title_of_project[]"></td>
+                        <td><input type="text" name="amount[]"></td>
+                        <td><input type="text" name="period[]"></td>
+                        <td><input type="text" name="status[]"></td>
+                        <td><button type="button" class="add-more-btn" onclick="addRow('projects_table')">Add More</button></td>
+                    </tr>
+                </table>
+            </fieldset>
+        </div>
+
+        <div class="form-section clearfix">
+            <fieldset>
+                <legend>&nbsp;</legend>
+                <input type="submit" class="save-next-btn" value="Save and Next">
+                <p> </p>
+                <input type="button" class="back-btn" value="Go Back" onclick="window.location.href='page4.html'">
+            </fieldset>
+        </div>
+    </form>
+</div>
+
+<script>
+    function addRow(tableId) {
+        var table = document.getElementById(tableId);
+        var newRow = table.insertRow(-1); // Insert row at the end
+        var numCols = table.rows[0].cells.length - 1; // Excluding action column
+        for (var i = 0; i < numCols; i++) {
+            var cell = newRow.insertCell(i); // Insert cell for each column
+            var input = document.createElement("input");
+            input.type = "text";
+            input.name = tableId + "[]";
+            cell.appendChild(input);
+        }
+        var actionCell = newRow.insertCell(numCols); // Insert cell for action
+        var removeButton = document.createElement("button");
+        removeButton.type = "button";
+        removeButton.textContent = "Remove";
+        removeButton.onclick = function() {
+            removeRow(tableId, this);
+        };
+        actionCell.appendChild(removeButton);
+    }
+
+    function removeRow(tableId, button) {
+        var row = button.parentNode.parentNode;
+        row.parentNode.removeChild(row);
+    }
+</script>
+
+</body>
+</html>
